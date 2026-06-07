@@ -1,6 +1,6 @@
 from enum import Enum
 
-from htmlnode import HTMLNode, LeafNode, ParentNode
+from htmlnode import LeafNode
 
 class TextType(Enum):
     TEXT = "text"
@@ -47,3 +47,4 @@ def text_node_to_html_node(text_node: TextNode) -> LeafNode:
             return LeafNode("img", None, {"src": text_node.url, "alt": text_node.text})
         case _:
             raise Exception(f"Unknown text type: {text_node.text_type}")
+        
